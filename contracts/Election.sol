@@ -17,12 +17,14 @@ contract Election {
     // Store accounts that have voted
     mapping(address => uint) public weight;
     mapping(address => bool) public votes;
+    
     // Store Candidates
     // Fetch Candidates
     mapping(uint => Candidate) public candidates;
     // Store Candidates Count
     uint public candidatesCount;
     address public chairperson;
+    bool public live = true;
 
     // voted event
     event votedEvent (
@@ -77,8 +79,9 @@ contract Election {
         // voters[0xd1F61F5522369767F938fd053D59eB28f07ceA97] = Voter(1, true);
         weight[_voterId] = 1;
         emit voterEvent(_voterId);
-      
+    }
 
-
+    function endElection() public {
+        live = false;
     }
 }

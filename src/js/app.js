@@ -124,6 +124,13 @@ App = {
         if (App.account == address) {
           addVoter.show();
         }
+        return electionInstance.live()
+      })
+      .then((status) => {
+        if (!status) {
+          $("form").hide();
+          addVoter.hide();
+        }
       })
       .catch(function (error) {
         console.warn(error);
@@ -171,6 +178,24 @@ App = {
         console.log(App.account);
       });
   },
+
+  endElection: ()=> {
+    App.contracts.Election.deployed()
+      .then(function (instance) {
+        instance.endElection({ from: App.account });
+        return instance
+      })
+      .then(function (instance) {
+        return instance.live();
+      })
+      .then((status) => {
+        console.log(status);
+      })
+      .catch(function (err) {
+        console.error(err);
+      });
+  },
+
   castVote: function () {
     var candidateId = $("#candidatesSelect").val();
     App.contracts.Election.deployed()
@@ -179,8 +204,10 @@ App = {
       })
       .then(function (result) {
         // Wait for votes to update
+ 
        
       })
+      
       .catch(function (err) {
         console.error(err);
       });
