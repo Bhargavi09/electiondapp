@@ -1,0 +1,17 @@
+body{
+    background-color: rgb(220, 199, 227);
+}
+
+#logo{
+    max-width: 350px;
+    max-height: 350px;
+    padding: 3px;
+}
+
+li{
+    color: white;
+}
+
+.nav-text{
+    color: white;
+}
