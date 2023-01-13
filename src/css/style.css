@@ -15,3 +15,11 @@ li{
 .nav-text{
     color: white;
 }
+
+.status{
+    border-radius: 20px;
+    background-color: red;
+    display: inline-flex;
+    font-size: medium;
+    padding: 10px;
+}

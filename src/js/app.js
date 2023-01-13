@@ -128,8 +128,11 @@ App = {
       })
       .then((status) => {
         if (!status) {
+        
           $("form").hide();
           addVoter.hide();
+          $("#status").html("Complete").css("background-color", "green");
+            
         }
       })
       .catch(function (error) {
