@@ -12,7 +12,7 @@ Install these prerequisites to follow along with the tutorial. See free video tu
 
 
 ## Step 1. Clone the project
-`git clone https://github.com/dappuniversity/election`
+`git clone https://github.com/Bhargavi09/electiondapp`
 
 ## Step 2. Install dependencies
 ```
@@ -37,5 +37,4 @@ See free video tutorial for full explanation of these steps:
 `$ npm run dev`
 Visit this URL in your browser: http://localhost:3000
 
-If you get stuck, please reference the free video tutorial.
 
