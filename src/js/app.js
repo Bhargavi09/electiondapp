@@ -63,9 +63,7 @@ App = {
       }
     });
 
-    // a = App.contracts.Election.deployed().then(function (i) {
-    //   console.log(i);
-    // });
+
     // console.log(a)
     // Load contract data
     // Load contract data
@@ -149,30 +147,10 @@ App = {
         return instance.giveVoteAccess(address, { from: App.account });
       })
       .then(function (instance) {
-        // Wait for votes to update
-        //console.log(election.voters(App.account).voted);
-        // election
-        //   .voters(address)
-        //   .then((voter) => {
-        //     return voter.weight;
-        //   })
-        //   .then((weight) => {
-        //     console.log(weight);
-        //   });
-        
-      //   for (var i = 1; i <= 7; i++) {
-      //     election.voters(i).then(function (candidate) {
-      //       var id = candidate[0];
-      //       var name = candidate[1];
-      //       // var voteCount = candidate[2];
-      //       console.log(id, name);
-      //     }
-      // )}
-
+    
         $("#content").show();
         $("#loader").hide();
-        // console.log("deployed");
-        // console.log(App.account);
+       
       })
       .catch(function (err) {
         //console.warn(err);
