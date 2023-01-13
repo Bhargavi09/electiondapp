@@ -104,11 +104,14 @@ App = {
             candidatesSelect.append(candidateOption);
           });
         }
-        return electionInstance.voters(App.account).voted;
+        
+        return electionInstance.votes(App.account);
       })
       .then(function (hasVoted) {
         // Do not allow a user to vote
+        console.log(hasVoted);
         if (hasVoted) {
+          
           $("form").hide();
         }
 
@@ -138,23 +141,23 @@ App = {
       .then(function (instance) {
         // Wait for votes to update
         //console.log(election.voters(App.account).voted);
-        election
-          .voters(address)
-          .then((voter) => {
-            return voter.weight;
-          })
-          .then((weight) => {
-            console.log(weight);
-          });
+        // election
+        //   .voters(address)
+        //   .then((voter) => {
+        //     return voter.weight;
+        //   })
+        //   .then((weight) => {
+        //     console.log(weight);
+        //   });
         
-        for (var i = 1; i <= 7; i++) {
-          election.voters(i).then(function (candidate) {
-            var id = candidate[0];
-            var name = candidate[1];
-            // var voteCount = candidate[2];
-            console.log(id, name);
-          }
-      )}
+      //   for (var i = 1; i <= 7; i++) {
+      //     election.voters(i).then(function (candidate) {
+      //       var id = candidate[0];
+      //       var name = candidate[1];
+      //       // var voteCount = candidate[2];
+      //       console.log(id, name);
+      //     }
+      // )}
 
         $("#content").show();
         $("#loader").hide();
